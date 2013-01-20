@@ -33,6 +33,7 @@ io.sockets.on("connection", function(socket){
         if (user == "ws1") {twit = twit1;}
         if (user == "ws2") {twit = twit2;}
         if (user == "ws3") {twit = twit3;}
+        if (user == "ws4") {twit = twit4;}
         io.sockets.emit("userRec", user);
     });
     socket.on("keyword", function(key) {
@@ -65,4 +66,11 @@ var twit3 = new twitter({
     consumer_secret: '2iNJRZYb5HYrd9V8TPHtMPIGUQizQlHVaTlsgPjGM',
     access_token_key: '26635865-PWr5miIeOauR7kZecWug01uPRjfbyyC4rMIGqUkvc',
 	access_token_secret: 'EkuBb4zUOYh8NIIWEoRjVeYPEFtfogmeFzESHxZc5A'
+});
+
+var twit4 = new twitter({
+    consumer_key: 'hOUuyC7afAmgqCWxQxb7QA',
+    consumer_secret: '1EFDr0dCSjEfTBV7ZcCPLd2dW1stieIEG5UfLjAoU',
+    access_token_key: '140094350-OmKS3AvYEo7vJI7iteM0nOOqiRN9JGshS4AsqqNC',
+    access_token_secret: 'h8mTSywrReMAFTiY6a54PnUbDXSP45XexOwdb1Pbjs'
 });
