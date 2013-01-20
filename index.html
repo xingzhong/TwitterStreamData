@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Box Data</title>
+        <style>
+            .pic { width:48px; }
+            .datetime {width : 80px; }
+            .name .location { width: 100px; }
+            .tweet {width: 300px;}
+        </style>
+    </head>
+    <body>
+        <h1>Box Data</h1>
+        <p> Automatically Streaming Twitter Data </p>
+        <hr>
+        <table id="data"></table>
+    </body>
+    <script src="/jquery-latest.js"></script>
+    <script src="/d3.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect(window.location.hostname);
+        socket.on('status', function (data) {
+            console.log(data.status);
+        });
+        var twitterBuff = [];
+        socket.on("res", function(data){
+            twitterBuff.push(data);
+            if(twitterBuff.length>5){ twitterBuff.shift(); }
+            
+            var table = d3.select("#data");
+            var tdata = table.selectAll("tr")
+                        .data(twitterBuff, function(d) {return d.id;});
+            var tr = tdata.enter().append("tr");
+            
+            tr.append("td").append("img").attr("class", "pic")
+                .attr("src", function(d) {return d.user.profile_image_url;});
+
+            tr.append("td").attr("class", "name")
+                .text(function(d){return d.user.name;});
+                
+            tr.append("td").attr("class", "tweet")
+                .text(function(d){return d.text;});
+                
+            tr.append("td").attr("class", "location")
+                .text(function(d){return d.user.location;});
+                
+            tr.append("td").attr("class", "datetime")
+                .text(function(d){return d.created_at;});
+                
+            tdata.exit().remove();
+        });
+        $("document").ready(function(){
+            socket.emit("keyword", "china");
+        });
+        
+    </script>
+</html>
