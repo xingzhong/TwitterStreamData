@@ -38,9 +38,17 @@ io.sockets.on("connection", function(socket){
     });
 });
 
+/*
 var twit = new twitter({
     consumer_key: 'verwURhvFVTuojYVJykZQ',
 	consumer_secret: 'RQDgjMrlen8QdZJM90rK9zxvCtSlJXfU7I7YO2STELk',
 	access_token_key: '26635865-5GyKYJD8oqteN7VvklzWE7Vtsssovorvo90P8izoc',
 	access_token_secret: 'kLZebpapNT9bQpCYXSoaJJojIpebukyNrjb8HSmVwA'
+});*/
+
+var twit = new twitter({
+    consumer_key: 'o7hQyqC0Ba8csgohX4sPsQ',
+    consumer_secret: 'HSyl9wxdaZwHpvolAWEDxdFDMrmKxla2hStLGNbSllM',
+	access_token_key: '26635865-ug3bmGiHmLGxEhSBIQkRPOEzJ7ZiEX5oP298qPF6U',
+	access_token_secret: '1bPjIMR9EulJB7Uvb8XkNH6tTnEVKGvGYDv4pnt1Ds'
 });
