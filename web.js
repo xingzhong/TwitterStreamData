@@ -6,6 +6,7 @@ var twitter = require("ntwitter");
 io.configure(function () {
     io.set("transports", ["xhr-polling"]);
     io.set("polling duration", 10);
+    io.set("log level", 1);
 });
 
 app.configure(function (){
