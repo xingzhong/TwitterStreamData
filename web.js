@@ -13,7 +13,8 @@ app.configure(function (){
 });
 
 app.get('/', function(request, response) {
-  response.sendfile(__dirname + '/index.html');
+    response.setHeader('Access-Control-Allow-Origin','*');
+    response.sendfile(__dirname + '/index.html');
 });
 
 var port = process.env.PORT || 5000;
