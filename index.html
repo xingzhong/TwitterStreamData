@@ -27,7 +27,7 @@
         socket.on("userRec", function (data) {
             console.log(data);
             $("#who").text(data);
-            socket.emit("keyword", "china");
+            socket.emit("keyword", "japan");
         });
         var twitterBuff = [];
         socket.on("res", function(data){
