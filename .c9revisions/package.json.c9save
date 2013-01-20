@@ -1,0 +1,5 @@
+{"ts":1358694039228,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"{}"]],"start1":0,"start2":0,"length1":0,"length2":2}]],"length":2}
+{"ts":1358694169903,"patch":[[{"diffs":[[0,"{"],[1,"\n    \"name\" : \"box-data-ws\",\n    \"dependencies\" : {}\n"],[0,"}"]],"start1":0,"start2":0,"length1":2,"length2":55}]],"length":55,"saved":false}
+{"ts":1358694223815,"patch":[[{"diffs":[[0,"   \""],[-1,"dependencies\" : {"],[1,"version\" : \"0.0.1\",\n    \"dependencies\" : {\n        \"express\" : \"~2.5.8\",\n        \"socket.io\" : \"~0.9.6\",\n        \"ntwitter\" : \"~0.5.0\"\n    "],[0,"}\n}"]],"start1":31,"start2":31,"length1":24,"length2":146}]],"length":177,"saved":false}
+{"ts":1358694266738,"patch":[[{"diffs":[[0,"~0.5.0\"\n"],[1,"    },\n    \"engines\": {\n        \"node\" : \"0.8.x\",\n        \"npm\" : \"1.0.x\"\n"],[0,"    }\n}"]],"start1":162,"start2":162,"length1":15,"length2":89}]],"length":251,"saved":false}
+{"ts":1358694285864,"patch":[[{"diffs":[[0,"m\" : \"1."],[-1,"0"],[1,"1"],[0,".x\"\n    "]],"start1":231,"start2":231,"length1":17,"length2":17}]],"length":251,"saved":false}

@@ -1,0 +1,2 @@
+{"ts":1358695578914,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"TwitterStreamData\n=================\n\nProvides Stable Timestamped Data Source"]],"start1":0,"start2":0,"length1":0,"length2":76}]],"length":76}
+{"contributors":[],"silentsave":false,"ts":1358695588245,"patch":[[{"diffs":[[0,"a Source"],[1,"\n"]],"start1":68,"start2":68,"length1":8,"length2":9}]],"length":77,"saved":false}
