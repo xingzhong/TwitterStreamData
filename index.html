@@ -35,7 +35,11 @@
             var tr = tdata.enter().append("tr");
             
             tr.append("td").append("img").attr("class", "pic")
-                .attr("src", function(d) {return d.user.profile_image_url;});
+                .attr("src", function(d) {
+                    if (d && d.user)
+                        return d.user.profile_image_url;
+                    return "";
+                });
 
             tr.append("td").attr("class", "name")
                 .text(function(d){return d.user.name;});
