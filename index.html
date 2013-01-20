@@ -11,6 +11,7 @@
     <body>
         <h1>Box Data</h1>
         <p> Automatically Streaming Twitter Data </p>
+        <p id="who"></p>
         <hr>
         <table id="data"></table>
     </body>
@@ -19,7 +20,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io.connect(window.location.hostname);
-        console.log(window.location.hostname);
+        $("#who").text(window.location.hostname);
         socket.on('status', function (data) {
             console.log(data.status);
         });
