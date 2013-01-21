@@ -24,10 +24,16 @@ app.listen(port, function() {
 });
 
 var twit;
+var stop = 0;
 io.sockets.on("connection", function(socket){
     io.sockets.emit("status", {"status" : "socket ready!"});
     socket.on("test", function(data) {
         io.sockets.emit("res", data);
+    });
+    socket.on("stop", function(){
+        console.log("stop:" + stop);
+        if (stop == 1) {stop = 0;}
+        else {stop = 1;}
     });
     socket.on("enterUser", function(user) {
         if (user == "ws1") {twit = twit1;}
@@ -40,7 +46,8 @@ io.sockets.on("connection", function(socket){
         console.log(key);
         twit.stream('statuses/filter', {"track":key}, function(stream){
             stream.on("data", function(data) {
-                io.sockets.emit("res", data);
+                if (stop == 0)
+                    io.sockets.emit("res", data);
             })
         })
     });

@@ -12,6 +12,7 @@
         <h1>Box Data</h1>
         <p> Automatically Streaming Twitter Data </p>
         <p> This is <span id="who"></span> </p>
+        <button id="stop"> stop </button> 
         <hr>
         <table id="data"></table>
     </body>
@@ -20,6 +21,13 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io.connect(window.location.hostname);
+        
+        $("#stop").click(function(){
+            console.log("stop");
+            socket.emit("stop", {});
+            if ($("#stop").text() == "stop") {$("#stop").text("run");}
+            else {$("#stop").text("stop");}
+        });
         socket.on('status', function (data) {
             console.log(data.status);
             socket.emit("enterUser", "ws2");
